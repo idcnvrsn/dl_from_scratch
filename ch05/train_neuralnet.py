@@ -14,7 +14,10 @@ np.random.seed(1)
 
 network = TwoLayerNet(input_size=784, hidden_size=50, output_size=10)
 
-iters_num = 10000
+if sys.argv[1] is not None:
+    iters_num = int(sys.argv[1])
+else:
+    iters_num = 10000
 train_size = x_train.shape[0]
 batch_size = 100
 learning_rate = 0.1
